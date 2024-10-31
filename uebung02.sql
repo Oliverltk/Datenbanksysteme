@@ -230,43 +230,365 @@ CREATE TABLE
     );
 
 -- Testdaten
-INSERT INTO starship_journeys (people_id, starship_id, journey_start, journey_end, role, freight, freight_content) VALUES
-(1, 18, '2023-01-05', '2023-01-25', 'pilot', true, 'Kyber crystals'),
-(2, 22, '2023-01-15', '2023-01-30', 'pilot', false, NULL),
-(4, 15, '2023-02-10', '2023-02-27', 'passenger', true, 'Rebel documents'),
-(6, 9, '2023-03-08', '2023-03-25', 'pilot', false, NULL),
-(7, 31, '2023-04-02', '2023-04-19', 'passenger', true, 'Medical supplies'),
-(8, 5, '2023-04-23', '2023-05-15', 'pilot', true, 'Droid parts'),
-(11, 12, '2023-06-01', '2023-06-22', 'pilot', false, NULL),
-(13, 2, '2023-07-18', '2023-08-09', 'passenger', true, 'Alien artifacts'),
-(14, 6, '2023-08-13', '2023-08-28', 'pilot', false, NULL),
-(15, 29, '2023-09-03', '2023-09-20', 'passenger', true, 'Exotic spices'),
-(18, 21, '2023-11-06', '2023-11-30', 'pilot', false, NULL),
-(19, 33, '2023-12-12', '2023-12-26', 'passenger', true, 'Confidential reports'),
-(20, 3, '2024-01-14', '2024-01-29', 'pilot', false, NULL),
-(21, 8, '2024-02-04', '2024-02-25', 'passenger', true, 'Rare minerals'),
-(24, 27, '2024-03-07', '2024-03-22', 'pilot', true, 'Smuggled goods'),
-(25, 11, '2024-04-01', '2024-04-11', 'pilot', false, NULL),
-(26, 16, '2024-05-08', '2024-05-23', 'passenger', true, 'Stolen paintings'),
-(28, 4, '2024-06-03', '2024-06-17', 'pilot', true, 'Imperial uniforms'),
-(29, 14, '2024-06-30', '2024-07-15', 'passenger', false, NULL),
-(30, 23, '2024-08-08', '2024-08-23', 'pilot', true, 'Historical texts'),
-(31, 10, '2024-09-12', '2024-09-27', 'pilot', false, NULL),
-(32, 36, '2024-10-05', '2024-10-19', 'passenger', true, 'Luxury foodstuff'),
-(34, 7, '2024-11-03', '2024-11-18', 'pilot', true, 'Engine parts'),
-(35, 20, '2024-12-09', '2024-12-24', 'pilot', false, NULL),
-(36, 25, '2025-01-06', '2025-01-21', 'passenger', true, 'Endangered species'),
-(37, 13, '2025-02-11', '2025-02-26', 'pilot', true, 'Holographic sculptures'),
-(38, 17, '2025-03-10', '2025-03-20', 'pilot', false, NULL),
-(39, 1, '2025-04-02', '2025-04-17', 'passenger', true, 'Prohibited literature'),
-(40, 34, '2025-05-07', '2025-05-22', 'pilot', true, 'Reactor fuel rods'),
-(41, 24, '2025-06-06', '2025-06-21', 'pilot', false, NULL),
-(42, 28, '2025-07-03', '2025-07-18', 'passenger', true, 'Vaccines'),
-(43, 26, '2025-08-14', '2025-08-29', 'pilot', true, 'Agricultural machinery'),
-(44, 30, '2025-09-08', '2025-09-23', 'pilot', false, NULL),
-(45, 32, '2025-10-03', '2025-10-18', 'passenger', true, 'Aged wines'),
-(46, 35, '2025-11-02', '2025-11-17', 'pilot', true, 'Robot companions'),
-(47, 18, '2025-12-05', '2025-12-20', 'pilot', false, NULL),
-(48, 15, '2026-01-10', '2026-01-25', 'passenger', true, 'Cryogenic capsules'),
-(49, 9, '2026-02-14', '2026-02-28', 'pilot', true, 'Meteorite samples'),
-(50, 5, '2026-03-07', '2026-03-22', 'pilot', false, NULL);
+INSERT INTO
+    starship_journeys (
+        people_id,
+        starship_id,
+        journey_start,
+        journey_end,
+        role,
+        freight,
+        freight_content
+    )
+VALUES
+    (
+        1,
+        18,
+        '2023-01-05',
+        '2023-01-25',
+        'pilot',
+        true,
+        'Kyber crystals'
+    ),
+    (
+        2,
+        22,
+        '2023-01-15',
+        '2023-01-30',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        4,
+        15,
+        '2023-02-10',
+        '2023-02-27',
+        'passenger',
+        true,
+        'Rebel documents'
+    ),
+    (
+        6,
+        9,
+        '2023-03-08',
+        '2023-03-25',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        7,
+        31,
+        '2023-04-02',
+        '2023-04-19',
+        'passenger',
+        true,
+        'Medical supplies'
+    ),
+    (
+        8,
+        5,
+        '2023-04-23',
+        '2023-05-15',
+        'pilot',
+        true,
+        'Droid parts'
+    ),
+    (
+        11,
+        12,
+        '2023-06-01',
+        '2023-06-22',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        13,
+        2,
+        '2023-07-18',
+        '2023-08-09',
+        'passenger',
+        true,
+        'Alien artifacts'
+    ),
+    (
+        14,
+        6,
+        '2023-08-13',
+        '2023-08-28',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        15,
+        29,
+        '2023-09-03',
+        '2023-09-20',
+        'passenger',
+        true,
+        'Exotic spices'
+    ),
+    (
+        18,
+        21,
+        '2023-11-06',
+        '2023-11-30',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        19,
+        33,
+        '2023-12-12',
+        '2023-12-26',
+        'passenger',
+        true,
+        'Confidential reports'
+    ),
+    (
+        20,
+        3,
+        '2024-01-14',
+        '2024-01-29',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        21,
+        8,
+        '2024-02-04',
+        '2024-02-25',
+        'passenger',
+        true,
+        'Rare minerals'
+    ),
+    (
+        24,
+        27,
+        '2024-03-07',
+        '2024-03-22',
+        'pilot',
+        true,
+        'Smuggled goods'
+    ),
+    (
+        25,
+        11,
+        '2024-04-01',
+        '2024-04-11',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        26,
+        16,
+        '2024-05-08',
+        '2024-05-23',
+        'passenger',
+        true,
+        'Stolen paintings'
+    ),
+    (
+        28,
+        4,
+        '2024-06-03',
+        '2024-06-17',
+        'pilot',
+        true,
+        'Imperial uniforms'
+    ),
+    (
+        29,
+        14,
+        '2024-06-30',
+        '2024-07-15',
+        'passenger',
+        false,
+        NULL
+    ),
+    (
+        30,
+        23,
+        '2024-08-08',
+        '2024-08-23',
+        'pilot',
+        true,
+        'Historical texts'
+    ),
+    (
+        31,
+        10,
+        '2024-09-12',
+        '2024-09-27',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        32,
+        36,
+        '2024-10-05',
+        '2024-10-19',
+        'passenger',
+        true,
+        'Luxury foodstuff'
+    ),
+    (
+        34,
+        7,
+        '2024-11-03',
+        '2024-11-18',
+        'pilot',
+        true,
+        'Engine parts'
+    ),
+    (
+        35,
+        20,
+        '2024-12-09',
+        '2024-12-24',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        36,
+        25,
+        '2025-01-06',
+        '2025-01-21',
+        'passenger',
+        true,
+        'Endangered species'
+    ),
+    (
+        37,
+        13,
+        '2025-02-11',
+        '2025-02-26',
+        'pilot',
+        true,
+        'Holographic sculptures'
+    ),
+    (
+        38,
+        17,
+        '2025-03-10',
+        '2025-03-20',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        39,
+        1,
+        '2025-04-02',
+        '2025-04-17',
+        'passenger',
+        true,
+        'Prohibited literature'
+    ),
+    (
+        40,
+        34,
+        '2025-05-07',
+        '2025-05-22',
+        'pilot',
+        true,
+        'Reactor fuel rods'
+    ),
+    (
+        41,
+        24,
+        '2025-06-06',
+        '2025-06-21',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        42,
+        28,
+        '2025-07-03',
+        '2025-07-18',
+        'passenger',
+        true,
+        'Vaccines'
+    ),
+    (
+        43,
+        26,
+        '2025-08-14',
+        '2025-08-29',
+        'pilot',
+        true,
+        'Agricultural machinery'
+    ),
+    (
+        44,
+        30,
+        '2025-09-08',
+        '2025-09-23',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        45,
+        32,
+        '2025-10-03',
+        '2025-10-18',
+        'passenger',
+        true,
+        'Aged wines'
+    ),
+    (
+        46,
+        35,
+        '2025-11-02',
+        '2025-11-17',
+        'pilot',
+        true,
+        'Robot companions'
+    ),
+    (
+        47,
+        18,
+        '2025-12-05',
+        '2025-12-20',
+        'pilot',
+        false,
+        NULL
+    ),
+    (
+        48,
+        15,
+        '2026-01-10',
+        '2026-01-25',
+        'passenger',
+        true,
+        'Cryogenic capsules'
+    ),
+    (
+        49,
+        9,
+        '2026-02-14',
+        '2026-02-28',
+        'pilot',
+        true,
+        'Meteorite samples'
+    ),
+    (
+        50,
+        5,
+        '2026-03-07',
+        '2026-03-22',
+        'pilot',
+        false,
+        NULL
+    );
