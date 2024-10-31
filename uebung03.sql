@@ -16,4 +16,10 @@ from
     join starships ON (starships.id = starship_journeys.starship_id) 
     join planet ON (people.planet_id = planet.id) WHERE starship_journeys.freight = true;
 
+
+SELECT * from persons_with_freight where planet_name = 'Tatooine';
+
+SELECT person_name, COUNT(person_name) FROM persons_with_freight group by person_name;
+
+
 -- Aufgabe 2
