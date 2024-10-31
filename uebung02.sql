@@ -225,8 +225,8 @@ CREATE TABLE
         role TEXT,
         freight boolean,
         freight_content TEXT,
-        FOREIGN KEY people_id references people (id),
-        FOREIGN KEY starship_id references starships (id)
+        FOREIGN KEY (people_id) references people (id),
+        FOREIGN KEY (starship_id) references starships (id)
     );
 
 -- Testdaten
