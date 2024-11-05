@@ -11,4 +11,4 @@ select
     starships.name as starship_name
 from
     people
-    join starships_journeys 
+    join starships_journeys
