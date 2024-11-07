@@ -52,4 +52,7 @@ ORDER BY
 -- Aufgabe 2
 CREATE unique index on factions(name);
 
-INSERT INTO factions(name, description) VALUES ('Sith', 'The really bad guys');
+INSERT INTO
+    factions (name, description)
+VALUES
+    ('Sith', 'The really bad guys');
