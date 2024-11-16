@@ -56,3 +56,21 @@ INSERT INTO
     factions (name, description)
 VALUES
     ('Sith', 'The really bad guys');
+
+
+-- Aufgabe 3
+ALTER Table people drop constraint planet_id;
+
+DELETE from planet where planet.name='Tatooine';
+
+BEGIN;
+ALTER TABLE people drop constraint people_planet_id_fkey;
+ALTER TABLE people alter column planet_id DROP NOT NULL;
+ALTER TABLE people add constraint people_planet_id_fkey FOREIGN KEY (planet_id) references planet(id) on delete set null;
+COMMIT;
+
+-- Aufgabe 5
+SELECT people.name, factions.name from people left join factions on (people.faction_id = factions.id);
+SELECT people.name, factions.name from factions right join people on (people.faction_id = factions.id);
+
+
